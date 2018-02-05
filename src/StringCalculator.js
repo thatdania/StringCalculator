@@ -16,6 +16,8 @@ StringCalculator.prototype.converter = function(...input){
 
 
 StringCalculator.prototype.calculate = function(array){
-  var sum = this.numbers.reduce((a, b) => a + b, 0);
+  console.log(array)
+  var sum = array.reduce((a, b) => a + b, 0);
+  console.log(sum)
   return sum
 }

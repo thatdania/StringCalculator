@@ -20,4 +20,10 @@ describe("StringCalculator", function() {
     });
   });
 
+  describe("#sum", function(){
+    it('should sum numbers in array', function(){
+      expect(stringCalculator.calculate([1,2])).toEqual(3)
+    });
+  });
+
 });
