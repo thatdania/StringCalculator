@@ -6,15 +6,17 @@ describe("StringCalculator", function() {
 
   describe("#caculate", function(){
     it('should return 0 if the method is not given any arguments', function(){
-      expect(stringCalculator.calculate()).toEqual(0)
+      expect(stringCalculator.converter()).toEqual(0)
     });
 
     it('should return value if one argument is given', function(){
-      expect(stringCalculator.calculate("1")).toEqual(1)
+      stringCalculator.converter("1")
+      expect(stringCalculator.numbers).toEqual([1])
     });
 
     it('should return value if two argument is given', function(){
-      expect(stringCalculator.calculate("1","2")).toEqual(3)
+      stringCalculator.converter("1","2")
+      expect(stringCalculator.numbers).toEqual([1,2])
     });
   });
 
