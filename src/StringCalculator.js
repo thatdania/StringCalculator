@@ -10,13 +10,14 @@ StringCalculator.prototype.converter = function(...input){
     for (i = 0; i < input.length; i++) {
       this.numbers.push(parseInt(input[i]))
     }
-    this.calculate(this.numbers);
+    return this.calculate(this.numbers);
   }
 }
 
 
 StringCalculator.prototype.calculate = function(array){
-  console.log(array)
-  var sum = array.reduce((a, b) => a + b, 0);
+  var arrayChecker = array.filter(function(str) {
+    return /\S/.test(str); });
+  var sum = arrayChecker.reduce((a, b) => a + b, 0);
   return sum
 }

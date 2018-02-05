@@ -19,12 +19,11 @@ describe("StringCalculator", function() {
       expect(stringCalculator.numbers).toEqual([1,2])
     });
 
-
   });
 
   describe("#sum", function(){
     it('should sum numbers in array', function(){
-      expect(stringCalculator.calculate([1,2])).toEqual(3)
+      expect(stringCalculator.calculate([1,'\n',2])).toEqual(3)
     });
 
     it('should sum a random amount of arguments', function(){
@@ -34,6 +33,10 @@ describe("StringCalculator", function() {
       res = randomArray(range,range);
       sum = res.reduce((pv, cv) => pv+cv, 0);
       expect(stringCalculator.calculate(res)).toEqual(sum)
+    });
+
+    it('should sum numbers in array', function(){
+      expect(stringCalculator.calculate([1,2])).toEqual(3)
     });
   });
 
