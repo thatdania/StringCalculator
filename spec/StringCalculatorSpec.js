@@ -6,16 +6,16 @@ describe("StringCalculator", function() {
 
   describe("#caculate", function(){
     it('should return 0 if the method is not given any arguments', function(){
-      expect(stringCalculator.converter()).toEqual(0)
+      expect(stringCalculator.calculate()).toEqual(0)
     });
 
     it('should return value if one argument is given', function(){
-      stringCalculator.converter("1")
+      stringCalculator.calculate("1")
       expect(stringCalculator.numbers).toEqual([1])
     });
 
     it('should return value if two argument is given', function(){
-      stringCalculator.converter("1","2")
+      stringCalculator.calculate("1","2")
       expect(stringCalculator.numbers).toEqual([1,2])
     });
 
@@ -28,19 +28,19 @@ describe("StringCalculator", function() {
       range = Math.floor((Math.random() * 100) + 1);
       res = randomArray(range,range);
       sum = res.reduce((pv, cv) => pv+cv, 0);
-      expect(stringCalculator.calculate(res)).toEqual(sum)
+      expect(stringCalculator.checker(res)).toEqual(sum)
     });
 
     it('should sum numbers in array', function(){
-      expect(stringCalculator.calculate([1,2])).toEqual(3)
+      expect(stringCalculator.checker([1,2])).toEqual(3)
     });
 
     it('should eliminate spaces when adding the array ', function(){
-      expect(stringCalculator.calculate([1,'\n',2])).toEqual(3)
+      expect(stringCalculator.checker([1,'\n',2])).toEqual(3)
     });
 
     it('should stop working when there is a negative function ', function(){
-      expect(stringCalculator.calculate([1,'\n',-2])).toEqual('Sorry no negative numbers allowed')
+      expect(stringCalculator.checker([1,'\n',-2])).toEqual('Sorry no negative numbers allowed')
     });
 
   });
