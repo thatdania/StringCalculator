@@ -22,10 +22,6 @@ describe("StringCalculator", function() {
   });
 
   describe("#sum", function(){
-    it('should sum numbers in array', function(){
-      expect(stringCalculator.calculate([1,'\n',2])).toEqual(3)
-    });
-
     it('should sum a random amount of arguments', function(){
       randomArray = (length, max) => [...new Array(length)]
       .map(() => Math.round(Math.random() * max));
@@ -38,6 +34,15 @@ describe("StringCalculator", function() {
     it('should sum numbers in array', function(){
       expect(stringCalculator.calculate([1,2])).toEqual(3)
     });
+
+    it('should eliminate spaces when adding the array ', function(){
+      expect(stringCalculator.calculate([1,'\n',2])).toEqual(3)
+    });
+
+    it('should stop working when there is a negative function ', function(){
+      expect(stringCalculator.calculate([1,'\n',-2])).toEqual('Sorry no negative numbers allowed')
+    });
+
   });
 
 });
