@@ -16,7 +16,6 @@ StringCalculator.prototype.calculate = function(...input){
   }
 }
 
-
 StringCalculator.prototype.checker = function(array){
 
   for (i = 0; i < array.length; i++) {
