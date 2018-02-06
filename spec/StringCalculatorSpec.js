@@ -43,6 +43,10 @@ describe("StringCalculator", function() {
       expect(stringCalculator.checker([1,'\n',-2])).toEqual('Sorry no negative numbers allowed')
     });
 
+    it('should ignore numbers more than a 1000', function(){
+      expect(stringCalculator.checker([1,1001])).toEqual(1)
+    });
   });
+
 
 });
