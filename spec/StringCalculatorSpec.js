@@ -40,7 +40,11 @@ describe("StringCalculator", function() {
     });
 
     it('should stop working when there is a negative function ', function(){
-      expect(stringCalculator.checker([1,'\n',-2])).toEqual('Sorry no negative numbers allowed')
+      expect(stringCalculator.checker([1,'\n',-2])).toEqual('Sorry no negative numbers')
+    });
+
+    it('should stop working when there is a symbol ', function(){
+      expect(stringCalculator.checker(['/','/',2,'*'])).toEqual('//' + 2)
     });
 
     it('should ignore numbers more than a 1000', function(){
