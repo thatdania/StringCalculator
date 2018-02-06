@@ -22,8 +22,11 @@ StringCalculator.prototype.checker = function(array){
   for (i = 0; i < array.length; i++) {
       if(array[i] < 0){
         return 'Sorry no negative numbers allowed'
+      } else if(array[i] > 1000){
+      delete array[i]
   }
 }
+
 
   var arrayChecker = array.filter(function(str) {
   return /\S/.test(str); });
